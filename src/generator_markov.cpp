@@ -8,6 +8,7 @@
 #include <fstream>
 #include <iostream>
 #include "generator_markov.h"
+#define rand_r rand
 
 
 genText::genText(std::map<prefix, std::vector<std::string> > presuf,
@@ -85,10 +86,10 @@ std::string genText::getText() {
         if (statetab[pre].size() == 0)
             break;
 
-        veroyatnost = rand() % statetab[pre].size();
+        veroyatnost = rand_r() % statetab[pre].size();
 
         if (statetab[pre][statetab[pre].size() - 1] == "end_file")
-          veroyatnost = rand() % (statetab[pre].size() - 1);
+          veroyatnost = rand_r() % (statetab[pre].size() - 1);
 
         text = text + statetab[pre][veroyatnost] + ' ';
 
