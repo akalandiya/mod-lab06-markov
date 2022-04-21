@@ -7,7 +7,7 @@
 
 //using namespace std;
 class genText {
-public:
+ public:
     std::string data;
     std::string getText();
 
