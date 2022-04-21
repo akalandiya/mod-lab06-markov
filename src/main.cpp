@@ -11,9 +11,9 @@
 
 
 int main() {
-    string line;
-    string text = "text.txt";
+    std::string line;
+    std::string text = "text.txt";
     genText gn = genText(text, 2, 1000);
-    string answer = gn.getText();
-    cout << answer;
+    std::string answer = gn.getText();
+    std::cout << answer;
 }
