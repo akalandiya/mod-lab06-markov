@@ -10,15 +10,15 @@
 #include "generator_markov.h"
 
 
-genText::genText(map<prefix, vector<string> > presuf,
-    vector<string> suf, int i1, int i2) {
+genText::genText(std::map<prefix, std::vector<std::string> > presuf,
+    std::vector<std::string> suf, int i1, int i2) {
     statetab = presuf;
     words = suf;
     NPREF = i1;
     MAXGEN = i2;
 }
 
-genText::genText(string filename, int i1, int i2) {
+genText::genText(std::string filename, int i1, int i2) {
     setlocale(LC_ALL, "Russian");
     srand(4561);
     NPREF = i1;
@@ -27,9 +27,9 @@ genText::genText(string filename, int i1, int i2) {
     int F = 0;
     int count = -1;
 
-    ifstream in(filename);
-    string line;
-    string textfile = "";
+    std::ifstream in(filename);
+    std::string line;
+    std::string textfile = "";
     if (in.is_open()) {
         while (getline(in, line)) {
             textfile = textfile + line + " ";
@@ -64,13 +64,13 @@ genText::genText(string filename, int i1, int i2) {
 }
 
 
-string genText::getText() {
+std::string genText::getText() {
     setlocale(LC_ALL, "Russian");
     srand(4561);
     prefix pre;
     for (int i = 0; i < NPREF; i++) pre.push_back(words[i]);
 
-    string text = "";
+    std::string text = "";
     int kol = 1;
 
     for (int i = 0; i < NPREF; i++)
@@ -92,7 +92,7 @@ string genText::getText() {
 
         text = text + statetab[pre][veroyatnost] + ' ';
 
-        string a = statetab[pre][veroyatnost];
+        std::string a = statetab[pre][veroyatnost];
         for (int i = 0; i < NPREF - 1; i++)
             pre[i] = pre[i + 1];
         pre[NPREF - 1] = a;
