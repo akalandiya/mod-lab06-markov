@@ -7,7 +7,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
-#include "generator_markov.h"
+#include "textgen.h"
 #define rand_r rand
 
 
