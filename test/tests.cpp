@@ -63,6 +63,5 @@ TEST(task5, test5) {
   int result = 0;
   if (s >= 204)
     result = 1;
-  
   EXPECT_EQ(1, result);
 }
