@@ -10,13 +10,6 @@ TEST(task1, test1) {
   EXPECT_EQ(9, result);
 }
 
-TEST(task1, test1) {
-  std::string text = "t1.txt";
-  genText gn = genText(text, 2, 1000);
-  int result = gn.words.size();
-  EXPECT_EQ(9, result);
-}
-
 TEST(task2, test2) {
   std::string text = "t1.txt";
   genText gn = genText(text, 2, 1000);
