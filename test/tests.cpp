@@ -1,6 +1,6 @@
 // Copyright 2021 GHA Test Team
 #include <gtest/gtest.h>
-#include "generator_markov.h"
+#include "textgen.h"
 #define rand_r rand
 
 TEST(task1, test1) {
