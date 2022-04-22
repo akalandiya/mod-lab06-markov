@@ -57,8 +57,8 @@ TEST(task4, test4) {
 
 TEST(task5, test5) {
   std::string text = "text3.txt";
-  genText gn = genText(text, 2, 201);
+  genText gn = genText(text, 2, 204);
   std::string answer = gn.getText();
   int result = answer.size();
-  EXPECT_EQ(201, result);
+  EXPECT_EQ(204, result);
 }
