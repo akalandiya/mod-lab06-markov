@@ -10,15 +10,6 @@
 #include "textgen.h"
 #define rand_r rand
 
-
-genText::genText(std::map<prefix, std::vector<std::string> > presuf,
-    std::vector<std::string> suf, int i1, int i2) {
-    statetab = presuf;
-    words = suf;
-    NPREF = i1;
-    MAXGEN = i2;
-}
-
 genText::genText(std::string filename, int i1, int i2) {
     setlocale(LC_ALL, "Russian");
     srand(4561);
